@@ -1,0 +1,128 @@
+:root {
+    --accent-color: hsl(25, 97%, 53%);
+    --active-state-color: hsl(0, 0%, 100%);
+    --button-bg-color: rgb(40 46 55);
+    --main-text-color: hsl(217, 12%, 63%);
+    --modal-bg-color: rgb(30 35 44);
+    --bg-color: hsl(216, 12%, 8%);
+    --font-fam: "Overpass";
+    --par-font-size: 15px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-fam);
+    font-size: 15px;
+    background-color: var(--bg-color);
+}
+
+#main-container {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 22rem;
+    height: 22rem;
+    background-color: var(--modal-bg-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+#thank-you-container {
+    align-items: center;
+    align-content: center;
+}
+
+h2 {
+    font-size: 20px;
+    color: var(--active-state-color);
+    padding: 40px 0 20px;
+    margin: 0;
+}
+
+p {
+    color: var(--main-text-color);
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+#button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.number, .star {
+    border: none;
+    border-radius: 50%;
+    background-color: var(--button-bg-color);
+    color: var(--main-text-color);
+    width: 55px;
+    height: 55px;
+}
+
+.star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number:hover {
+    background-color: var(--accent-color);
+    color: var(--modal-bg-color);
+    cursor: pointer;
+}
+
+#sub-button {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: var(--accent-color);
+    font-weight: 500;
+    font-size: var(--par-font-size);
+    border: none;
+    border-radius: 20px;
+}
+
+#sub-button:hover {
+    background-color: var(--active-state-color);
+    cursor: pointer;
+}
+
+.number, .number:hover, #sub-button, #sub-button:hover {
+    transition: all 0.3s ease-in-out;
+}
+
+#thank-you-container p {
+    text-align: center;
+}
+
+#selected {
+    background-color: var(--button-bg-color);
+    border-radius: 15px;
+    padding: 5px 15px;
+    color: var(--accent-color);
+    margin: 30px 0 0;
+}
+
+.number.selected {
+    background-color: var(--active-state-color);
+    color: var(--modal-bg-color);
+}
+
+@media only screen and (max-width: 460px) {
+    #main-container {
+        margin: 20px;
+    }
+    #rating-container, #thank-you-container {
+        width: auto;
+    }
+    .number, .star {
+        width: 45px;
+        height: 45px;
+    }
+}
